@@ -42,46 +42,10 @@
             position: relative;
         }
 
-        .logo-container input[type="file"] {
-            display: none;
-        }
-
-        .logo-placeholder {
-            width: 100%;
-            height: 100%;
-            border: 3px dashed #0051BA;
-            border-radius: 15px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            background: #f8f9fa;
-        }
-
-        .logo-placeholder:hover {
-            border-color: #FFD500;
-            background: #fff;
-        }
-
-        .logo-placeholder img {
+        .logo-container img {
             width: 100%;
             height: 100%;
             object-fit: contain;
-            border-radius: 12px;
-        }
-
-        .upload-text {
-            color: #0051BA;
-            font-size: 1.1em;
-            font-weight: 600;
-            margin-top: 10px;
-        }
-
-        .upload-icon {
-            font-size: 3em;
-            color: #0051BA;
         }
 
         .logo p {
@@ -194,11 +158,7 @@
     <div class="container">
         <div class="logo">
             <div class="logo-container">
-                <input type="file" id="logoInput" accept="image/*">
-                <label for="logoInput" class="logo-placeholder" id="logoLabel">
-                    <span class="upload-icon">📷</span>
-                    <span class="upload-text">Click to upload your logo</span>
-                </label>
+                <img src="./LOGO.PNG" alt="Time For Hobby Logo">
             </div>
             <p>⚔️ Miniature Painting & Wargaming 🎨</p>
         </div>
@@ -241,21 +201,5 @@
             <p>© 2024 Time For Hobby | All Rights Reserved</p>
         </footer>
     </div>
-
-    <script>
-        const logoInput = document.getElementById('logoInput');
-        const logoLabel = document.getElementById('logoLabel');
-
-        logoInput.addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(event) {
-                    logoLabel.innerHTML = `<img src="${event.target.result}" alt="Time For Hobby Logo">`;
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-    </script>
 </body>
 </html>
